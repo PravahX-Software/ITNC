@@ -1,2 +1,0 @@
-# ITNC
-ITNC Releases

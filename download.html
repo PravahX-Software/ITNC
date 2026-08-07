@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - ITNC</title>
+    <style>
+        /* --- REUSING VARIABLES --- */
+        :root {
+            --bg-color: #000000;
+            --card-bg: #151516;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --accent-blue: #2997ff;
+            --accent-yellow: #FFD60A;
+            --accent-green: #30d158;
+            --glass: rgba(0, 0, 0, 0.8);
+            --max-width: 1200px;
+            --nav-height: 60px;
+            --step-number-color: #3a3a3c;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.7; }
+        
+        h1, h2, h3 { font-weight: 700; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: var(--nav-height);
+            background: var(--glass);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .nav-content {
+            width: var(--max-width); display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; font-size: 13px; font-weight: 500;
+        }
+        .nav-links a { margin-left: 25px; color: #d6d6d6; }
+        .logo { font-weight: 700; letter-spacing: 0.5px; }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            padding-top: calc(var(--nav-height) + 100px);
+            padding-bottom: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-header h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .page-header p { color: var(--text-secondary); font-size: 20px; }
+
+        /* --- BUTTON STYLES --- */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px; border-radius: 980px; font-size: 15px; font-weight: 600;
+            transition: transform 0.2s; cursor: pointer; border: none;
+        }
+        
+        .cta-blue { background-color: var(--accent-blue); color: #fff; box-shadow: 0 0 20px rgba(41, 151, 255, 0.3); }
+        .cta-secondary { background-color: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .cta-green { background-color: var(--accent-green); color: black; box-shadow: 0 0 20px rgba(48, 209, 88, 0.3); }
+        
+        .cta-button:hover { transform: scale(1.05); }
+
+        /* --- WARNING BOX STYLES --- */
+        .warning-box {
+            background-color: rgba(255, 159, 10, 0.1);
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-left: 4px solid #ff9f0a;
+            padding: 18px 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #e5e5ea;
+            text-align: left;
+        }
+        .warning-box strong {
+            color: #ff9f0a;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .scan-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--accent-yellow);
+            font-weight: 600;
+            text-decoration: underline;
+            padding: 6px 12px;
+            background: rgba(255, 214, 10, 0.1);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+        .scan-link:hover {
+            background: rgba(255, 214, 10, 0.2);
+            color: #fff;
+        }
+
+        /* --- STEPS CONTAINER --- */
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 150px 20px;
+            position: relative;
+        }
+
+        .step-block {
+            display: grid;
+            grid-template-columns: 100px 1fr; 
+            gap: 40px;
+            min-height: 400px;
+            margin-bottom: 80px;
+            padding-top: 40px;
+        }
+
+        .step-number-container {
+            position: sticky;
+            top: 150px;
+            height: fit-content;
+            text-align: right;
+        }
+
+        .step-number-display {
+            font-size: 120px;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--step-number-color);
+            background: linear-gradient(180deg, #555557 0%, #2a2a2c 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .step-content h2 { font-size: 36px; margin-bottom: 20px; color: #fff; }
+        .step-content p { font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; }
+
+        .ui-screenshot-container {
+            margin-top: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .ui-screenshot-container::before {
+            content: ''; position: absolute; inset: 0;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+            border-radius: 20px; pointer-events: none;
+        }
+        .ui-screenshot-container img {
+            width: 100%; height: auto; display: block; opacity: 0.9;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 20px; max-width: var(--max-width); margin: 0 auto;
+            border-top: 1px solid #333; font-size: 12px; color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 40px; }
+            .step-block { grid-template-columns: 1fr; gap: 20px; min-height: auto; }
+            .step-number-container { position: relative; top: 0; text-align: left; margin-bottom: -20px;}
+            .step-number-display { font-size: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">ITNC</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="#" style="color: var(--accent-blue);">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Simple Setup. Verified Security.</h1>
+        <p>Follow these steps to get ITNC running safely on your system.</p>
+    </header>
+
+    <main class="steps-container">
+
+        <section class="step-block">
+            <div class="step-number-container">
+                <div class="step-number-display">1</div>
+            </div>
+            <div class="step-content">
+                <h2>Download the Installer</h2>
+                <p>Download our custom installer to unpack and set up the ITNC bot securely on your PC.</p>
+                
+                <a href="/ITNC_Setup.exe" class="cta-button cta-blue">
+                    <span>⬇ Download ITNC Setup</span>
+                </a>
+                
+                <div class="warning-box">
+                    <strong>⚠️ Important Installation Note</strong>
+                    Because ITNC is a newly updated automation tool, you may encounter security warnings during installation:
+                    <br><br>
+                    • <b>Windows SmartScreen:</b> If you see a blue "Windows protected your PC" popup, click <b>More info</b> and then <b>Run anyway</b>.<br>
+                    • <b>Antivirus False Positives:</b> Third-party antivirus software might flag the downloaded file. This is a common false positive for newly compiled Python software. Our app is thoroughly tested and completely secure.
+                    <br>
+                    <a href="https://virusscan.jotti.org/en-US/filescanjob/6j2vcbpx4o" target="_blank" class="scan-link">🛡️ View our 100% Clean Virus Scan Report from giants like Kaspersky and Bitdefender</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="step-block">
+            <div class="step-number-container">
+                <div class="step-number-display">2</div>
+            </div>
+            <div class="step-content">
+                <h2>Activate License</h2>
+                <p>The app download is free, but you need a Pro License to run the automation. Purchase your key securely below.</p>
+                <p>Once you have the key from your email, simply launch the ITNC app and paste it into the activation window.</p>
+                
+                <a href="https://checkout.dodopayments.com/buy/pdt_0NWYGeuGTkb37dKIKl5AN?quantity=1" target="_blank" class="cta-button cta-green">Get free 30 days trail</a>
+            </div>
+        </section>
+
+        <section class="step-block">
+            <div class="step-number-container">
+                <div class="step-number-display">3</div>
+            </div>
+            <div class="step-content">
+                <h2>Prepare Credentials</h2>
+                <p>Download the sample CSV file below. Fill it with your clients' PAN numbers and passwords. Then, open the ITNC app and browse to select your prepared CSV file.</p>
+                <div style="margin-bottom: 30px;">
+                     <a href="/credentials.csv" class="cta-button cta-secondary">⬇ Download Sample CSV</a>
+                </div>
+
+                <div class="ui-screenshot-container">
+                    <img src="Screenshot.png" alt="ITNC Interface showing credentials path selection">
+                </div>
+            </div>
+        </section>
+
+        <section class="step-block">
+            <div class="step-number-container">
+                <div class="step-number-display">4</div>
+            </div>
+            <div class="step-content">
+                <h2>Start and Forget</h2>
+                <p>Click the big green <strong>START</strong> button. The bot will begin cycling through your clients.</p>
+                <p>You can close the window—it will minimize to your system tray and continue running silently in the background.</p>
+            </div>
+        </section>
+
+        <section class="step-block">
+            <div class="step-number-container">
+                <div class="step-number-display">5</div>
+            </div>
+            <div class="step-content">
+                <h2>Generate Report</h2>
+                <p>When the process is complete, open the app and click <strong>Generate Excel</strong>. A master sheet with all findings will be created instantly.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Jyoti Goel. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

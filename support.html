@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - ITNC</title>
+    <style>
+        /* --- CORE APPLE AESTHETIC --- */
+        :root {
+            --bg-color: #000000;
+            --card-bg: #151516;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --accent-blue: #2997ff;
+            --accent-yellow: #FFD60A;
+            --glass: rgba(0, 0, 0, 0.8);
+            --max-width: 1000px;
+            --nav-height: 60px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: var(--nav-height);
+            background: var(--glass);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .nav-content {
+            width: 1200px; display: flex; justify-content: space-between; align-items: center;
+            padding: 0 20px; font-size: 13px; font-weight: 500;
+        }
+        .logo { font-weight: 700; letter-spacing: 0.5px; cursor: pointer; }
+        .nav-links a { margin-left: 25px; color: #d6d6d6; text-decoration: none; }
+
+        /* --- HEADER --- */
+        header {
+            padding: 140px 20px 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: clamp(40px, 8vw, 64px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            font-size: 19px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover { background: rgba(255,255,255,0.02); }
+
+        .faq-answer {
+            padding: 0 30px 24px;
+            color: var(--text-secondary);
+            font-size: 17px;
+            line-height: 1.6;
+            display: none; /* Controlled by JS */
+        }
+
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .icon { transform: rotate(45deg); }
+
+        .icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            color: var(--accent-blue);
+        }
+
+        /* --- CONTACT BOX --- */
+        .contact-card {
+            background: linear-gradient(145deg, #1e1e1f, #151516);
+            border-radius: 28px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(41, 151, 255, 0.2);
+        }
+        .btn-mail {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="logo">ITNC</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="download.html">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>How can we help?</h1>
+        <p class="subtitle">Find answers to common questions about setting up and managing your ITNC automation.</p>
+    </header>
+
+    <main class="faq-container">
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                How do I cancel my subscription?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                We use <strong>Dodo Payments</strong> for secure billing. You can cancel your subscription at any time through your personal Customer Portal <a href="https://customer.dodopayments.com/login/bus_0NWYDTw0QODokNj9rtbVJ" style="color:var(--accent-blue)">here</a>.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Is my client data safe?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes. ITNC operates on a <strong>Local-First</strong> basis. Your credentials.csv file and downloaded tax notices stay strictly on your computer. We do not upload your sensitive client data to any external servers; the automation simply mimics your manual login process.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How should I format the credentials file?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Use a standard CSV format. The file should contain columns for PAN and Password. You can download the <a href="/credentials.csv" style="color:var(--accent-blue)">template here</a> to ensure the bot reads your data correctly.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                What happens if the Income Tax Portal UI changes?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Since you installed ITNC via the Microsoft Store, you don't need to worry. When we release a fix for portal changes, the Store will <strong>automatically update</strong> your app in the background. You will always have the latest version ready to go.
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h3>Still have questions?</h3>
+            <p style="color: var(--text-secondary); margin-top: 10px;">Our support team is ready to help you avoid those penalties.</p>
+            <a href="https://tally.so/r/lbj58k" class="btn-mail">Contact Support</a>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Jyoti Goel. All rights reserved.
+    </footer>
+
+    <script>
+        // Simple JS for Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
