@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warranty & Refund Policy - ITNC</title>
+    <title>Warranty, Liability & Refund Policy - ITNC</title>
     <style>
         /* --- APPLE DESIGN SYSTEM VARIABLES --- */
         :root {
@@ -109,6 +109,14 @@
             margin-bottom: 10px;
         }
 
+        .legal-box {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 25px 0;
+        }
+
         .highlight-text {
             color: #ff3b30;
             font-weight: 600;
@@ -145,49 +153,67 @@
     </nav>
 
     <main class="legal-container">
-        <h1>Warranty & Refund Policy</h1>
+        <h1>Warranty, User Liability & Refund Policy</h1>
         <p class="last-updated">Last Updated: August 2026</p>
 
-        <h2>1. "As-Is" Software (No Warranty)</h2>
-        <p>ITNC is provided on an <span class="highlight-text">"AS IS" and "AS AVAILABLE"</span> basis, without warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-        <p>We do not warrant that the software will be completely error-free, secure, or operate without interruption. As an automation tool relying on third-party infrastructure (the Income Tax Portal), its functionality is inherently tied to systems outside of our control.</p>
+        <div class="legal-box">
+            <strong style="color: #fff; font-size: 18px;">Summary of Key Terms:</strong>
+            <p style="margin-top: 10px; margin-bottom: 0;">ITNC is a client-side utility executed entirely on your own device and IP address. You assume 100% legal, compliance, and regulatory liability for running this tool, verifying authorization for the credentials used, and adhering to the Income Tax Portal's rules.</p>
+        </div>
 
-        <h2>2. Third-Party Dependencies & Uptime</h2>
-        <p>ITNC interacts directly with the official Income Tax Department of India portal. You acknowledge and agree that:</p>
+        <h2>1. Client-Side Execution & User Responsibility</h2>
+        <p>ITNC is distributed as a client-side application. The software runs, executes, and transmits data <strong>entirely from your local computer hardware and network IP address</strong>. No tax portal credentials or client data are routed through or stored on ITNC's servers.</p>
+        <p>Because the software operates under your direct command and local computing environment, you are deemed the sole operator initiating all interactions with third-party servers.</p>
+
+        <h2>2. Compliance Warranties & Authorizations</h2>
+        <p>By executing ITNC, you explicitly warrant and represent that:</p>
         <ul>
-            <li>Changes to the Income Tax portal's UI, security measures (like CAPTCHA), or API may temporarily or permanently break ITNC's functionality.</li>
-            <li>We are not responsible for delays, missed notices, or failures caused by portal unresponsiveness, maintenance, or structural updates.</li>
-            <li>We make no guarantees regarding the continuous uptime or availability of the ITNC service.</li>
+            <li>You have obtained explicit, lawful written authorization from every taxpayer/PAN holder whose credentials you input into the software.</li>
+            <li>Your use of ITNC complies fully with the Information Technology Act, 2000 (including Sections 43 and 66), and all other applicable Indian statutory regulations.</li>
+            <li>You assume full legal responsibility for adhering to the Income Tax Department of India's Portal Terms of Use, security policies, and rate limits.</li>
         </ul>
 
-        <h2>3. Strict No-Refund Policy</h2>
-        <p>Because ITNC provides digital, automated infrastructure, <span class="highlight-text">all sales are final and non-refundable</span>. By subscribing to or purchasing an ITNC license, you agree to the following terms regarding refunds:</p>
+        <h2>3. Full Indemnification & Hold Harmless</h2>
+        <p>You agree to <span class="highlight-text">defend, indemnify, and hold harmless</span> Jyoti Goel, ITNC, its developers, and affiliates from and against any and all claims, liabilities, losses, damages, legal fees, penalties, or regulatory fines arising out of or related to:</p>
         <ul>
-            <li><strong>Downtime & Bugs:</strong> No refunds or prorated credits will be issued for periods where the software is experiencing bugs, downtime, or maintenance.</li>
-            <li><strong>Service Shutdown:</strong> In the event that ITNC is forced to shut down entirely (due to unresolvable third-party portal blocks, regulatory changes, or business closure), no refunds will be issued for remaining time on active subscriptions.</li>
-            <li><strong>User Cancellation:</strong> You may cancel your subscription at any time to prevent future billing, but previous charges will not be refunded.</li>
+            <li>Your operation, deployment, or execution of the software on your system.</li>
+            <li>Any alleged unauthorized access, account lockouts, IP blocks, or penalties imposed by government entities (including the Income Tax Department of India).</li>
+            <li>Any breach of client confidentiality or failure to secure proper consent from taxpayer clients.</li>
         </ul>
 
-        <h2>4. Limitation of Liability</h2>
-        <p>In no event shall Jyoti Goel, ITNC, or its developers be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or penalties incurred from the Income Tax Department.</p>
-        <p>You remain solely responsible for verifying the accuracy of the data retrieved by ITNC and ensuring your or your clients' tax compliance. ITNC is an assistant, not a replacement for professional oversight.</p>
+        <h2>4. "As-Is" Software (No Warranty)</h2>
+        <p>ITNC is provided on an <strong>"AS IS" and "AS AVAILABLE"</strong> basis, without warranties of any kind, either express or implied. We do not warrant that the software will be uninterrupted, error-free, or compatible with future updates to third-party portals.</p>
 
-        <h2>5. Contact</h2>
-        <p>If you have questions regarding this policy before purchasing, please contact us via our <a href="/support" style="color: var(--accent-blue);">Support Form</a>.</p>
+        <h2>5. Third-Party Portal Changes & Uptime</h2>
+        <p>Changes made by the Income Tax Department to their portal UI, security mechanisms (including CAPTCHAs or Web Application Firewalls), or access policies may render ITNC partially or completely non-functional. We bear no liability for delays, missed notices, or functional disruptions caused by portal updates.</p>
+
+        <h2>6. Strict No-Refund Policy</h2>
+        <p>All sales and subscription purchases are final and non-refundable under any circumstances, including:</p>
+        <ul>
+            <li>Periods of software downtime or temporary portal incompatibility.</li>
+            <li>Permanent loss of tool functionality due to security updates or structural changes on the Income Tax Portal.</li>
+            <li>Complete business closure or software discontinuation.</li>
+            <li>Account suspensions or IP blocks initiated by third-party authorities.</li>
+        </ul>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>In no event shall Jyoti Goel or ITNC be liable for any direct, indirect, incidental, special, or consequential damages (including missed income tax deadlines, interest penalties, or loss of client data) arising from the use or inability to use this software.</p>
+
+        <h2>8. Contact</h2>
+        <p>If you have questions regarding these terms prior to purchasing, please contact us via our <a href="/support" style="color: var(--accent-blue);">Support Form</a>.</p>
     </main>
 
     <footer>
         <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
             <div>&copy; 2026 Jyoti Goel. All rights reserved.</div>
             <div class="nav-links" style="margin-left:0;">
-                <a href="/warranty.html" style="margin-left:0; margin-right:20px;">Warranty & Refunds</a>
-                <a href="/terms.html">Terms of Service</a>
+                <a href="/warranty.html" style="margin-left:0; margin-right:20px;">Warranty & Liability</a>
             </div>
         </div>
         <div class="disclaimer">
-            <strong>Disclaimer:</strong> ITNC is an independent automation utility. It is not affiliated with, endorsed by, or connected to the Income Tax Department of India.
+            <strong>Disclaimer:</strong> ITNC is an independent client-side automation utility. It is not affiliated with, endorsed by, or connected to the Income Tax Department of India.
             <br>
-            Users are solely responsible for ensuring compliance with the Income Tax Portal's Terms of Use and having authorisation to use client credentials. We provide the tool; you provide the authorization.
+            Users execute the software locally and are solely responsible for ensuring compliance with all statutory rules and portal Terms of Use.
         </div>
     </footer>
 
