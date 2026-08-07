@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty & Refund Policy - ITNC</title>
+    <style>
+        /* --- APPLE DESIGN SYSTEM VARIABLES --- */
+        :root {
+            --bg-color: #000000;
+            --card-bg: #151516;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --accent-blue: #2997ff;
+            --accent-yellow: #FFD60A;
+            --glass: rgba(0, 0, 0, 0.8);
+            --max-width: 1200px;
+            --nav-height: 60px;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+        a:hover { opacity: 0.7; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-content {
+            width: var(--max-width);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .nav-links a { margin-left: 25px; color: #d6d6d6; }
+        .logo { font-weight: 700; letter-spacing: 0.5px; }
+
+        /* --- LEGAL CONTENT CONTAINER --- */
+        .legal-container {
+            max-width: 800px;
+            margin: calc(var(--nav-height) + 60px) auto 80px;
+            padding: 0 20px;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .legal-container h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .legal-container p.last-updated {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .legal-container h2 {
+            font-size: 24px;
+            color: #fff;
+            margin: 40px 0 15px;
+            font-weight: 600;
+        }
+
+        .legal-container p, .legal-container ul {
+            font-size: 16px;
+            color: #d1d1d6;
+            margin-bottom: 20px;
+        }
+
+        .legal-container ul {
+            padding-left: 20px;
+        }
+
+        .legal-container li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            color: #ff3b30;
+            font-weight: 600;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 20px 40px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            border-top: 1px solid #333;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .disclaimer { margin-top: 20px; padding-top: 20px; border-top: 1px solid #222; line-height: 1.6; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo"><a href="/">ITNC</a></div>
+            <div class="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/support">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal-container">
+        <h1>Warranty & Refund Policy</h1>
+        <p class="last-updated">Last Updated: August 2026</p>
+
+        <h2>1. "As-Is" Software (No Warranty)</h2>
+        <p>ITNC is provided on an <span class="highlight-text">"AS IS" and "AS AVAILABLE"</span> basis, without warranties of any kind, either express or implied. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+        <p>We do not warrant that the software will be completely error-free, secure, or operate without interruption. As an automation tool relying on third-party infrastructure (the Income Tax Portal), its functionality is inherently tied to systems outside of our control.</p>
+
+        <h2>2. Third-Party Dependencies & Uptime</h2>
+        <p>ITNC interacts directly with the official Income Tax Department of India portal. You acknowledge and agree that:</p>
+        <ul>
+            <li>Changes to the Income Tax portal's UI, security measures (like CAPTCHA), or API may temporarily or permanently break ITNC's functionality.</li>
+            <li>We are not responsible for delays, missed notices, or failures caused by portal unresponsiveness, maintenance, or structural updates.</li>
+            <li>We make no guarantees regarding the continuous uptime or availability of the ITNC service.</li>
+        </ul>
+
+        <h2>3. Strict No-Refund Policy</h2>
+        <p>Because ITNC provides digital, automated infrastructure, <span class="highlight-text">all sales are final and non-refundable</span>. By subscribing to or purchasing an ITNC license, you agree to the following terms regarding refunds:</p>
+        <ul>
+            <li><strong>Downtime & Bugs:</strong> No refunds or prorated credits will be issued for periods where the software is experiencing bugs, downtime, or maintenance.</li>
+            <li><strong>Service Shutdown:</strong> In the event that ITNC is forced to shut down entirely (due to unresolvable third-party portal blocks, regulatory changes, or business closure), no refunds will be issued for remaining time on active subscriptions.</li>
+            <li><strong>User Cancellation:</strong> You may cancel your subscription at any time to prevent future billing, but previous charges will not be refunded.</li>
+        </ul>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>In no event shall Jyoti Goel, ITNC, or its developers be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or penalties incurred from the Income Tax Department.</p>
+        <p>You remain solely responsible for verifying the accuracy of the data retrieved by ITNC and ensuring your or your clients' tax compliance. ITNC is an assistant, not a replacement for professional oversight.</p>
+
+        <h2>5. Contact</h2>
+        <p>If you have questions regarding this policy before purchasing, please contact us via our <a href="/support" style="color: var(--accent-blue);">Support Form</a>.</p>
+    </main>
+
+    <footer>
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+            <div>&copy; 2026 Jyoti Goel. All rights reserved.</div>
+            <div class="nav-links" style="margin-left:0;">
+                <a href="/warranty.html" style="margin-left:0; margin-right:20px;">Warranty & Refunds</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> ITNC is an independent automation utility. It is not affiliated with, endorsed by, or connected to the Income Tax Department of India.
+            <br>
+            Users are solely responsible for ensuring compliance with the Income Tax Portal's Terms of Use and having authorisation to use client credentials. We provide the tool; you provide the authorization.
+        </div>
+    </footer>
+
+</body>
+</html>
